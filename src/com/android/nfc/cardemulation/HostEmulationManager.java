@@ -207,7 +207,7 @@ public class HostEmulationManager {
                     // Check if resolvedService requires unlock
                     ApduServiceInfo defaultServiceInfo = resolveInfo.defaultService;
                     if ((defaultServiceInfo.requiresUnlock()
-                            || NfcService.getInstance().isSecureNfcEnabled())
+                            || NfcService.getInstance().isNfcSecureEnabled())
                           && mKeyguard.isKeyguardLocked()) {
                         NfcService.getInstance().sendRequireUnlockIntent();
                         NfcService.getInstance().sendData(AID_NOT_FOUND);
